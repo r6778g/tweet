@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Tweet List{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <a class="btn btn-primary my-3" href="{% url 'tweet_create' %}">Create a Tweet</a>
+</div>
+
+<div class="container">
+    <div class="row gap-3">
+        {% for tweet in tweets %}
+        <div class="card mb-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ tweet.user.username }}</h5>
+                <p class="card-text">{{ tweet.text }}</p>
+                {% if tweet.image %}
+                    <img src="{{ tweet.image.url }}" alt="Tweet Image" class="img-fluid mb-2">
+                {% endif %}
+                <p class="card-text"><small class="text-muted">{{ tweet.created_at|date:"F j, Y, g:i a" }}</small></p>
+                <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-warning">Edit</a>
+                <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

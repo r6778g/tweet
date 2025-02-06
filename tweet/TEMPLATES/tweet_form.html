@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Default Title{% endblock %}
+
+{% block content %}
+<h2>
+    {%if form.instance.pk%} 
+    Edit Tweet
+    {%else%} 
+    Create tweet
+    {%endif%}
+    <form method="post",enctype="multipart/from-data" class="form">{{form.as_p}}
+    {% csrf_token %}
+    <button class="bth bth-waring" type="submit">submit</button>
+    
+</form>
+<a href="{%url 'tweet_list'%}">tweet_list</a>
+
+    <h2>
+
+
+{% endblock %}
