@@ -68,3 +68,7 @@ def register(request):
         form = UserRegistrationForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
+
+def work():
+    print("hi my name mohit")

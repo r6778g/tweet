@@ -4,7 +4,7 @@ URL configuration for the Mohit project.
 The `urlpatterns` list routes URLs to views. For more details, visit:
 https://docs.djangoproject.com/en/5.1/topics/http/urls/
 """
-
+#hi my name is mohit
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings

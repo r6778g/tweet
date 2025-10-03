@@ -5,4 +5,7 @@ class TweetConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'tweet'
 
-  
+
+class books():
+    id=10
+    name='mohit
